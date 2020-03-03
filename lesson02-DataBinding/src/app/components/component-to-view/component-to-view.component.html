@@ -5,3 +5,56 @@
 <p>{{ showInfo() }}</p>
 <img [src]="imgLink" alt="hot girl" width="200" />
 <a [href]="link">google</a>
+<hr />
+<h1>Property Binding</h1>
+<img bind-src="imgLink" [alt]="'hot girl'" [width]="imgWidth" /><br /><br />
+<input type="text" class="form-control" [value]="user.name" />
+<br />
+<button 
+  type="button" 
+  class="btn btn-primary" 
+  [disabled]="isValid"
+>
+  Login
+</button>
+<hr/>
+<table [attr.border]="tbBorder" [attr.width]="tbWidth" >
+  <tr>
+    <td>ID</td>
+    <td>Name</td>
+    <td>TelephoneNumber</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>ABC</td>
+    <td>123456789</td>
+  </tr>
+</table>
+<hr/>
+<h2>Class Binding</h2>
+<table [class.table-bordered]="isBorder" >
+  <tr>
+    <td>ID</td>
+    <td>Name</td>
+    <td>TelephoneNumber</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>ABC</td>
+    <td>123456789</td>
+  </tr>
+</table>
+
+<span 
+  class="label" 
+  [class.label-danger]="isChecked === 1"
+  [class.label-success]="isChecked !== 1"
+>Label</span>
+<div 
+  [style.background-color]="isSpecial ? 'yellow' : 'blue'" 
+  [style.user-select]="isSpecial ? 'none' : 'auto'"
+  [style.font-size.px]="size"
+>
+  Learning Angular 4
+</div>
+
