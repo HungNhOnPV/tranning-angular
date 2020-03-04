@@ -1,0 +1,28 @@
+<h1>{{ title }}</h1>
+
+<form>
+  <div class="form-group">
+    <label for="name">Name: {{ name }}</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      placeholder="Enter name"
+      [(ngModel)]="name"
+      [ngModelOptions]="{ standalone: true }"
+    />
+  </div>
+  <hr />
+  <label>Gender: {{ gender === 0 ? "female" : "Male" }}</label>
+  <select
+    name="gender"
+    id="input"
+    class="form-control"
+    required="required"
+    [(ngModel)]="gender"
+    [ngModelOptions]="{ standalone: true }"
+  >
+    <option value="0">female</option>
+    <option value="1">Male</option>
+  </select>
+</form>
