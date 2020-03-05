@@ -1,4 +1,4 @@
-<h1 *ngIf="isShow">Name: {{ userName }}</h1>
+<!-- <h1 *ngIf="isShow">Name: {{ userName }}</h1>
 
 <button type="button" class="btn btn-warning" (click)="isShow = !isShow">
   Toggle
@@ -45,9 +45,53 @@
   />
 </div>
 
-<ng-container *ngIf="age > 18; else elseNotEnough" >
+<ng-container *ngIf="age > 18; else elseNotEnough">
   <h3>Age enough</h3>
 </ng-container>
 <ng-template #elseNotEnough>
   <h3>Not age enough</h3>
+</ng-template> -->
+
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let name of names">{{ name }}</li>
+</ul>
+
+<ng-container *ngIf="products.length > 0; else elseNoProducts">
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="
+          let product of products;
+          let i = index;
+          let f = first;
+          let l = last;
+          let e = even;
+          let o = odd;
+          trackBy: myTrackByFunction
+        "
+        [style.background-color]="f ? 'gray' : ''"
+        [style.background-color]="l ? 'cyan' : ''"
+        [style.background-color]="e ? 'yellow' : 'blue'"
+        [style.background-color]="o ? 'blue' : 'yellow'"
+      >
+        <td>{{ i + 1 }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }} VND</td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
+<ng-template #elseNoProducts>
+  <h3>No Product</h3>
 </ng-template>
+
+<button type="button" class="btn btn-danger" (click)="onFetchData()">
+  Fetch Data
+</button>
