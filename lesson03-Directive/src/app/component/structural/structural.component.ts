@@ -19,6 +19,25 @@ export class StructuralComponent implements OnInit {
     }
   ];
 
+  users: any[] = [
+    {
+      name: 'John Smith',
+      country: 'USA'
+    },
+    {
+      name: 'Pham Viet Hung',
+      country: 'VN'
+    },
+    {
+      name: 'Nguyen Thi Huong',
+      country: 'VN'
+    },
+    {
+      name: 'Tran Van Hiep',
+      country: 'Laos'
+    }
+  ]
+
   productsFormServers: any[] = [
     {
       id: 1,

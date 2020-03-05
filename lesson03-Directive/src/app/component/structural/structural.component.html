@@ -52,7 +52,7 @@
   <h3>Not age enough</h3>
 </ng-template> -->
 
-<ul class="list-group">
+<!-- <ul class="list-group">
   <li class="list-group-item" *ngFor="let name of names">{{ name }}</li>
 </ul>
 
@@ -94,4 +94,20 @@
 
 <button type="button" class="btn btn-danger" (click)="onFetchData()">
   Fetch Data
-</button>
+</button> -->
+
+<ul class="list-group">
+  <li
+    class="list-group-item"
+    *ngFor="let user of users"
+    [ngSwitch]="user.country"
+  >
+    <span class="text-danger" *ngSwitchCase="'VN'">
+      {{ user.name }} - {{ user.country }}
+    </span>
+    <span class="text-primary" *ngSwitchCase="'USA'">
+      {{ user.name }} - {{ user.country }}
+    </span>
+    <span *ngSwitchDefault> {{ user.name }} - {{ user.country }} </span>
+  </li>
+</ul>
