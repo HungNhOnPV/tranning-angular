@@ -1,0 +1,53 @@
+<h1 *ngIf="isShow">Name: {{ userName }}</h1>
+
+<button type="button" class="btn btn-warning" (click)="isShow = !isShow">
+  Toggle
+</button>
+<hr />
+
+<div class="radio">
+  <label>
+    <input
+      type="radio"
+      name="rdCheck"
+      id="input"
+      value=""
+      checked="checked"
+      (click)="onChange(true)"
+    />
+    Decent </label
+  >&nbsp;
+  <label>
+    <input
+      type="radio"
+      name="rdCheck"
+      id="input"
+      value=""
+      (click)="onChange(false)"
+    />
+    Invalid
+  </label>
+</div>
+
+<h3 *ngIf="isChecked; else elseBlock">Decent</h3>
+<ng-template #elseBlock>
+  <h3>Invalid</h3>
+</ng-template>
+
+<div class="form-group">
+  <label for="age">Age:</label>
+  <input
+    type="text"
+    class="form-control"
+    id="age"
+    placeholder="Enter age"
+    [(ngModel)]="age"
+  />
+</div>
+
+<ng-container *ngIf="age > 18; else elseNotEnough" >
+  <h3>Age enough</h3>
+</ng-container>
+<ng-template #elseNotEnough>
+  <h3>Not age enough</h3>
+</ng-template>
