@@ -16,12 +16,29 @@
   Toggle
 </button> -->
 
-<h3 [ngClass]="['pd-10', 'cl-red', 'border-blue']">
+<!-- <h3 [ngClass]="['pd-10', 'cl-red', 'border-blue']">
   Welcome to course Angular 4
 </h3>
 <h3
   [ngClass]="setClasses()"
 >
+  Welcome to course Angular 4
+</h3>
+
+<button type="button" class="btn btn-danger" (click)="isSpecial = !isSpecial">
+  Toggle
+</button> -->
+
+<h3
+  [ngStyle]="{
+    color: isSpecial ? 'green' : '',
+    border: isSpecial ? '1px solid #f6f' : '',
+    'padding.px': isSpecial ? 10 : 0
+  }"
+>
+  Welcome to course Angular 4
+</h3>
+<h3 [ngStyle]="setStyles()">
   Welcome to course Angular 4
 </h3>
 
