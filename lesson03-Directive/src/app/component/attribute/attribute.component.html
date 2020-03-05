@@ -1,0 +1,30 @@
+<!-- <h3 [ngClass]="['pd-10', 'cl-red', 'border-blue']">
+  Welcome to course Angular 4
+</h3>
+<h3
+  [ngClass]="{
+    'border-blue': isSpecial,
+    'pd-10': isSpecial,
+    'cl-red': isSpecial,
+    'border-yellow': !isSpecial
+  }"
+>
+  Welcome to course Angular 4
+</h3>
+
+<button type="button" class="btn btn-danger" (click)="isSpecial = !isSpecial">
+  Toggle
+</button> -->
+
+<h3 [ngClass]="['pd-10', 'cl-red', 'border-blue']">
+  Welcome to course Angular 4
+</h3>
+<h3
+  [ngClass]="setClasses()"
+>
+  Welcome to course Angular 4
+</h3>
+
+<button type="button" class="btn btn-danger" (click)="isSpecial = !isSpecial">
+  Toggle
+</button>
