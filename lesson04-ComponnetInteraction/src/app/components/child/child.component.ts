@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
   selector: "app-child",
@@ -10,6 +10,10 @@ export class ChildComponent implements OnInit {
   @Input("age") age: number;
   // @Input() name: string;
   private _name: string;
+  txtFullName: string;
+  @Output("txtFullName") onHandleFullName = new EventEmitter<string>();
+  txtPhone: number;
+  @Output("txtPhone") onHandlePhone = new EventEmitter<number>();
 
   constructor() {}
 
@@ -23,4 +27,9 @@ export class ChildComponent implements OnInit {
   getName() {
     return this._name;
   }
+
+  onSubmitForm = () => {
+    this.onHandleFullName.emit(this.txtFullName);
+    this.onHandlePhone.emit(this.txtPhone);
+  };
 }

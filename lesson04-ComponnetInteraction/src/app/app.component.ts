@@ -12,18 +12,28 @@ export class AppComponent {
   users: any[] = [
     {
       id: 1,
-      name: 'Pham Viet Hung',
-      address: 'Nam Dinh'
+      name: "Pham Viet Hung",
+      phone: "0972093127"
     },
     {
       id: 2,
-      name: 'Nguyen Thi Huong',
-      address: 'Thai Binh'
+      name: "Nguyen Thi Huong",
+      phone: "0123456789"
     },
     {
       id: 3,
-      name: 'Tran Van Hiep',
-      address: 'Ha Noi'
+      name: "Tran Van Hiep",
+      phone: "0931234452"
     }
-  ]
+  ];
+  txtFullName: string;
+  txtPhone: number;
+
+  onGetFullName = value => {
+    this.txtFullName = value;
+  };
+
+  onGetPhone = value => {
+    this.txtPhone = value;
+  };
 }

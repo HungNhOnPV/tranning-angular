@@ -6,5 +6,35 @@
     <h3>Married: {{ isMarried ? "Married" : "alone" }}</h3>
     <h3>Age: {{ age }}</h3>
     <h3>Name: {{ getName() }}</h3>
+
+    <form>
+      <legend>Form title</legend>
+
+      <div class="form-group">
+        <label for="fullName">Full name: </label>
+        <input
+          type="text"
+          class="form-control"
+          id="fullName"
+          placeholder="Enter name"
+          [(ngModel)]="txtFullName"
+          [ngModelOptions]="{ standalone: true }"
+        />
+
+        <label for="phone">Phone: </label>
+        <input
+          type="number"
+          class="form-control"
+          id="phone"
+          placeholder="Enter name"
+          [(ngModel)]="txtPhone"
+          [ngModelOptions]="{ standalone: true }"
+        />
+      </div>
+
+      <button type="button" class="btn btn-primary" (click)="onSubmitForm()">
+        Send
+      </button>
+    </form>
   </div>
 </div>
