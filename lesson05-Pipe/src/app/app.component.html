@@ -1,0 +1,36 @@
+<div class="container" [style.margin-top.px]="30">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Ten pipe</th>
+            <th>Du lieu dau vao</th>
+            <th>Ket qua hien thi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>UpperCase</td>
+            <td>{{ content }}</td>
+            <td>{{ content | uppercase }}</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>LowerCase</td>
+            <td>{{ content }}</td>
+            <td>{{ content | lowercase }}</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>TitleCase</td>
+            <td>{{ content }}</td>
+            <td>{{ content | titlecase }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
