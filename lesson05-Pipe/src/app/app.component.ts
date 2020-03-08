@@ -13,4 +13,10 @@ export class AppComponent {
   names: string[] = ["abc", "def", "xyz", "123", "456"];
   total: number = 75.8;
   today: Date = new Date();
+  products: any = {
+    id: 1,
+    name: "Samsung galaxy s7",
+    price: 15,
+    status: true
+  };
 }
