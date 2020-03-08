@@ -53,6 +53,18 @@
             <td>{{ result }}</td>
             <td>{{ result | percent: "1.0-3" }}</td>
           </tr>
+          <tr>
+            <td>8</td>
+            <td>Currency</td>
+            <td>{{ total }}</td>
+            <td>{{ total | currency: "VND":false:"1.0-3" }}</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Date</td>
+            <td>{{ today }}</td>
+            <td>{{ today | date: "dd/MM/y hh:mm:ss a" }}</td>
+          </tr>
         </tbody>
       </table>
     </div>

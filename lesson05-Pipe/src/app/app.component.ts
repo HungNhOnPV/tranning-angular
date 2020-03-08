@@ -11,4 +11,6 @@ export class AppComponent {
   amount: number = 35.142567;
   result: number = 0.8516;
   names: string[] = ["abc", "def", "xyz", "123", "456"];
+  total: number = 75.8;
+  today: Date = new Date();
 }
