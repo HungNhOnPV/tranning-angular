@@ -1,0 +1,37 @@
+<div class="container" [style.margin-top.px]="30">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Input</th>
+            <th>Output</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <p>{{ arrNumber }}</p>
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="onIncrease()"
+              >
+                Increase</button
+              >&nbsp;
+              <button
+                type="button"
+                class="btn btn-danger"
+                (click)="onDecrease()"
+              >
+                Decrease
+              </button>
+
+            </td>
+            <td>{{ arrNumber | sortNumber: temple }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
