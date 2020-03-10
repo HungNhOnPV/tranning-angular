@@ -1,0 +1,18 @@
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th (click)="onSort('name')">Name</th>
+      <th (click)="onSort('price')">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let product of products | sort: sortBy:sortValue; let i = index"
+    >
+      <td>{{ i + 1 }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price | currency: "USD":true:"1.0-3" }}</td>
+    </tr>
+  </tbody>
+</table>
