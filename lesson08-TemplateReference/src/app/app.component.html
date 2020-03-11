@@ -1,0 +1,40 @@
+<div class="container" [style.margin-top.px]="30">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Template Reference</h3>
+        </div>
+        <div class="panel-body">
+          <input
+            type="text"
+            id="input"
+            class="form-control"
+            required="required"
+            placeholder="Hello everyone"
+            #txtName
+            ref-txtName
+          />
+
+          <button
+            type="button"
+            class="btn btn-success"
+            [style.margin-top.px]="10"
+            (click)="onGetData(txtName)"
+          >
+            Fetch data</button
+          >&nbsp;
+
+          <button
+            type="button"
+            class="btn btn-danger"
+            [style.margin-top.px]="10"
+            (click)="onGetDataComp()"
+          >
+            Fetch data
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
