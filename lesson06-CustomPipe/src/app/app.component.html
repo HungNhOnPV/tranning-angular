@@ -26,9 +26,14 @@
               >
                 Decrease
               </button>
-
             </td>
             <td>{{ arrNumber | sortNumber: temple }}</td>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" class="form-control" [(ngModel)]="name" />
+            </td>
+            <td>{{ name | capitalize }}</td>
           </tr>
         </tbody>
       </table>
