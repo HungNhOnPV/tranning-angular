@@ -16,11 +16,11 @@ export class OtherLifecycleComponent implements OnInit, AfterContentInit, AfterC
   }
 
   ngAfterContentChecked(): void {
-    console.log('ngAfterContentChecked: OtherLifecycleComponent');
+    // console.log('ngAfterContentChecked: OtherLifecycleComponent');
   }
 
   ngAfterContentInit(): void {
-    console.log('ngAfterContentInit: OtherLifecycleComponent');
+    // console.log('ngAfterContentInit: OtherLifecycleComponent');
   }
 
 }

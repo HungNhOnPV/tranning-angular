@@ -66,5 +66,39 @@
         </div>
       </div>
     </div>
+
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">ngAfterView - ngAfterViewChecked</h3>
+        </div>
+        <div class="panel-body">
+          <ul class="list-group" #arrProductsAfter>
+            <li
+              class="list-group-item"
+              *ngFor="let product of products; let id = index"
+            >
+              {{ id + 1 }} - {{ product.name }}
+            </li>
+          </ul>
+
+          <input
+            type="text"
+            class="form-control"
+            required="required"
+            #product
+          />
+
+          <button
+            type="button"
+            class="btn btn-success"
+            [style.margin-top.px]="10"
+            (click)="onAddProduct(product.value)"
+          >
+            Add product
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
