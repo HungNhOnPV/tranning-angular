@@ -50,15 +50,19 @@
         </div>
         <div class="panel-body">
           <app-other-lifecycle>
-            <h1>H1</h1>
-            <h2>H2</h2>
-            <h3 class="myClass">H3</h3>
-            <h4 id="myId">H4</h4>
-            <h5>h5</h5>
-            <div myAttr>Div</div>
-            <span myAttrValue="angular4">Angular 4</span>
-            <p handsome demo>You are handsome</p>
+            <h1 #value>Value: {{ content }}</h1>
           </app-other-lifecycle>
+
+          <input type="text" class="form-control" required="required" #text />
+
+          <button
+            type="button"
+            class="btn btn-danger"
+            [style.margin-top.px]="10"
+            (click)="onClick(text.value)"
+          >
+            Click me!!
+          </button>
         </div>
       </div>
     </div>

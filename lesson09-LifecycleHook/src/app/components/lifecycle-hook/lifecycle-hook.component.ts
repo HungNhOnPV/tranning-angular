@@ -21,23 +21,23 @@ export class LifecycleHookComponent
   previousTotal: number;
 
   constructor() {
-    console.log("constructor: LifecycleHookComponent");
+    // console.log("constructor: LifecycleHookComponent");
   }
 
   ngOnInit(): void {
-    console.log("ngOnInit: LifecycleHookComponent");
+    // console.log("ngOnInit: LifecycleHookComponent");
   }
 
   ngOnChanges(simpleChanges: SimpleChanges): void {
-    console.log("ngOnChanges: LifecycleHookComponent");
+    // console.log("ngOnChanges: LifecycleHookComponent");
     this.previousTotal = simpleChanges.total.previousValue;
   }
 
   ngOnDestroy(): void {
-    console.log("ngOnDestroy: LifecycleHookComponent");
+    // console.log("ngOnDestroy: LifecycleHookComponent");
   }
 
   ngDoCheck(): void {
-    console.log('ngDoCheck: LifecycleHookComponent');
+    // console.log('ngDoCheck: LifecycleHookComponent');
   }
 }

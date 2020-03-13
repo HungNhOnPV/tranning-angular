@@ -12,6 +12,7 @@ export class AppComponent {
   total: number = 0;
   a: number;
   b: number;
+  content: string = "ng-content";
 
   onToggle = () => {
     this.isShow = !this.isShow;
@@ -19,6 +20,10 @@ export class AppComponent {
 
   onAmount = () => {
     this.total = this.a + this.b;
+  }
+
+  onClick = value => {
+    this.content = value;
   }
 
 }
