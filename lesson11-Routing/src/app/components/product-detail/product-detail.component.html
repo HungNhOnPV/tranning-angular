@@ -1,0 +1,23 @@
+<ng-container *ngIf="product else noProduct">
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price | currency: 'USD': true: '1.0-3' }}</td>
+        <td>{{ product.status ? "Active" : "Deactivate" }}</td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
+<ng-template #noProduct>
+  <h2>This is product has been deleted</h2>
+</ng-template>
