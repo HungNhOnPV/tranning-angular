@@ -13,7 +13,17 @@ export class ProductService {
 
   constructor() {}
 
-  getAllProducts = () => {
+  getAllProducts = (name?: string, price?: number) => {
+    if(name) {
+      return this.products.filter(x => {
+        return x.name.toLowerCase().indexOf(name.toLowerCase()) != -1;
+      });
+    }
+    if(price) {
+      return this.products.filter(x => {
+        return x.price == price;
+      });
+    }
     return this.products;
   };
 

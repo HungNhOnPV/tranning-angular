@@ -31,7 +31,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
 
   handleParams = () => {
     let id = null;
-    this._activatedRoute.params.subscribe(data => {
+    this.subscription = this._activatedRoute.params.subscribe(data => {
       id = data.id;
     });
     this.product = this._productService.getProductByID(id);
