@@ -37,4 +37,15 @@ export class ProductService {
     }
     return result;
   };
+
+  getEditProductByID = (product: Product) => {
+    for (let i = 0; i < this.products.length; i++) {
+      if (this.products[i].id == product.id) {
+        this.products[i].name = product.name;
+        this.products[i].price = product.price;
+        this.products[i].status = product.status;
+        break;
+      }
+    }
+  };
 }
