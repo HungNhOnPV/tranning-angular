@@ -40,7 +40,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
   }
 
   onSearch = () => {
-    this._routerService.navigate(["product"], {
+    this._routerService.navigate(["products"], {
       queryParams: {
         name: this.name ? this.name : "",
         price: this.price ? this.price : ""

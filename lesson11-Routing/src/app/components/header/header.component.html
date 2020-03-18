@@ -25,7 +25,13 @@
         <a [routerLink]="['/contact']">Contact</a>
       </li>
       <li routerLinkActive="active"><a [routerLink]="['/about']">About</a></li>
-      <li routerLinkActive="active"><a [routerLink]="['/products']">Products</a></li>
+      <li routerLinkActive="active">
+        <a [routerLink]="['/products']">Products</a>
+      </li>
+      <li routerLinkActive="active">
+        <a [routerLink]="['/login']" *ngIf="temp == 1">Login</a>
+      </li>
+      <li><a *ngIf="temp == -1" (click)="onLogout()">Logout</a></li>
     </ul>
   </div>
   <!-- /.navbar-collapse -->

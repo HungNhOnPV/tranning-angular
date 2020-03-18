@@ -7,8 +7,10 @@ import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { ProductsComponent } from "./components/products/products.component";
 import { ProductDetailComponent } from "./components/product-detail/product-detail.component";
 import { ProductListComponent } from "./components/product-list/product-list.component";
-import { ProductEditComponent } from './components/product-edit/product-edit.component';
-import { ProductDeleteComponent } from './components/product-delete/product-delete.component';
+import { ProductEditComponent } from "./components/product-edit/product-edit.component";
+import { ProductDeleteComponent } from "./components/product-delete/product-delete.component";
+import { LoginComponent } from "./components/login/login.component";
+import { AuthGuard } from "./services/guard/auth.guard";
 
 export const appRoutes: Routes = [
   {
@@ -47,8 +49,13 @@ export const appRoutes: Routes = [
     ]
   },
   {
-    path: 'products',
-    component: ProductListComponent
+    path: "products",
+    component: ProductListComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "login",
+    component: LoginComponent
   },
   {
     path: "**",

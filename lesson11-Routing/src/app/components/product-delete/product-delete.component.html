@@ -1,1 +1,10 @@
-<p>product-delete works!</p>
+<h3>Are your sure you want to delete</h3>
+
+<button
+  type="button"
+  class="btn btn-danger"
+  [style.margin-top.px]="10"
+  (click)="onDeleteProduct(id)"
+>
+  Delete
+</button>
