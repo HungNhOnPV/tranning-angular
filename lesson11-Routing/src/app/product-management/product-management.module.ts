@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 // Component
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
@@ -25,8 +24,7 @@ import { productRoutes } from './product-management.routes';
     ProductsComponent
   ],
   imports: [
-    CommonModule,
-    FormsModule,
+    SharedModule,
     RouterModule.forChild(productRoutes)
   ],
   providers: [

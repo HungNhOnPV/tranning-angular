@@ -58,7 +58,7 @@
       [routerLink]="['/product', product.id]"
     >
       <td>{{ id + 1 }}</td>
-      <td>{{ product.name }}</td>
+      <td>{{ product.name | capitalize }}</td>
       <td>{{ product.price | currency: "USD":true:"1.0-3" }}</td>
       <td>{{ product.status ? "Active" : "Deactivate" }}</td>
       <td>
