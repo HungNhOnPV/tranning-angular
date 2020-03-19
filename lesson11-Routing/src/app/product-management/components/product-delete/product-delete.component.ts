@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ProductService } from '../../services/product.service';
+import { ProductService } from 'src/app/product-management/services/product.service';
 
 @Component({
   selector: 'app-product-delete',

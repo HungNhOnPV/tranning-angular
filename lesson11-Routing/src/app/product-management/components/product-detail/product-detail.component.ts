@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Product } from "../../models/product.class";
-import { ProductService } from "../../services/product.service";
+import { ProductService } from "src/app/product-management/services/product.service";
 import { Subscription } from 'rxjs';
 
 @Component({
