@@ -10,7 +10,8 @@ import { ProductListComponent } from "./components/product-list/product-list.com
 import { ProductEditComponent } from "./components/product-edit/product-edit.component";
 import { ProductDeleteComponent } from "./components/product-delete/product-delete.component";
 import { LoginComponent } from "./components/login/login.component";
-import { AuthGuard } from "./services/guard/auth.guard";
+import { AuthGuard } from "./services/guards/auth.guard";
+import { AccessGuard } from './services/guards/access.guard';
 
 export const appRoutes: Routes = [
   {
@@ -20,7 +21,8 @@ export const appRoutes: Routes = [
   },
   {
     path: "index",
-    component: HomeComponent
+    component: HomeComponent,
+    canDeactivate: [AccessGuard]
   },
   {
     path: "about",

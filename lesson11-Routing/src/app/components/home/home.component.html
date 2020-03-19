@@ -1,1 +1,32 @@
 <h1>Home Component</h1>
+
+<div class="alert alert-warning" *ngIf="error === 1">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+    &times;
+  </button>
+  <strong>Warning key!</strong>
+</div>
+
+<div class="alert alert-success" *ngIf="error === -1">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+    &times;
+  </button>
+  <strong>Success key</strong>
+</div>
+
+<input
+  type="text"
+  class="form-control"
+  required="required"
+  placeholder="Enter key"
+  #key
+/>
+
+<button
+  type="button"
+  class="btn btn-success"
+  (click)="onAccess(key.value)"
+  [style.margin-top.px]="10"
+>
+  Access
+</button>
