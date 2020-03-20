@@ -12,6 +12,7 @@ export class AppComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   todos: Todo[] = [];
   title: string;
+  todo: Todo = null;
   value: number = 0;
 
   constructor(private _todoService: TodoService) {}
@@ -51,5 +52,44 @@ export class AppComponent implements OnInit, OnDestroy {
         this._todoService.handleError(error);
       }
     );
+  };
+
+  onEditTodo = (item: Todo) => {
+    this.todo = item;
+  };
+
+  onUpdateTodo = () => {
+    this.subscription = this._todoService.updateTodo(this.todo).subscribe(
+      data => {
+        let index = this.getIndex(this.todo.id);
+        this.todos[index] = data;
+        this.todo = null;
+      },
+      error => {
+        this._todoService.handleError(error);
+      }
+    );
+  };
+
+  onDeleteTodo = (id: number) => {
+    this.subscription = this._todoService.deleteTodo(id).subscribe(
+      data => {
+        let index = this.getIndex(id);
+        this.todos.splice(index, 1);
+      },
+      error => {
+        this._todoService.handleError(error);
+      }
+    );
+  };
+
+  getIndex = (id: number) => {
+    let result = -1;
+    this.todos.forEach((todo, index) => {
+      if (todo.id === id) {
+        result = index;
+      }
+    });
+    return result;
   };
 }

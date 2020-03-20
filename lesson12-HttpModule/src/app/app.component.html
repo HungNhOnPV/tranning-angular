@@ -7,6 +7,7 @@
             <th>ID</th>
             <th>Title</th>
             <th>Completed</th>
+            <th>Active</th>
           </tr>
         </thead>
         <tbody>
@@ -14,6 +15,22 @@
             <td>{{ i + 1 }}</td>
             <td>{{ todo.title }}</td>
             <td>{{ todo.completed ? "Completed" : "InProgress" }}</td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="onEditTodo(todo)"
+              >
+                Edit</button
+              >&nbsp;
+              <button
+                type="button"
+                class="btn btn-danger"
+                (click)="onDeleteTodo(todo.id)"
+              >
+                Delete
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -51,6 +68,43 @@
           class="btn btn-primary"
           [style.margin-top.px]="10"
           (click)="onAddTodo()"
+        >
+          Save
+        </button>
+      </form>
+      <form *ngIf="todo">
+        <legend>EDIT TODO</legend>
+
+        <div class="form-group">
+          <label for="title">Title: </label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            placeholder="Enter title"
+            [(ngModel)]="todo.title"
+            [ngModelOptions]="{ standalone: true }"
+          />
+        </div>
+        <div class="form-group">
+          <label for="completed">Completed: </label>
+          <select
+            id="completed"
+            class="form-control"
+            required="required"
+            [(ngModel)]="todo.completed"
+            [ngModelOptions]="{ standalone: true }"
+          >
+            <option value="true">Completed</option>
+            <option value="false">InProgress</option>
+          </select>
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [style.margin-top.px]="10"
+          (click)="onUpdateTodo()"
         >
           Save
         </button>
