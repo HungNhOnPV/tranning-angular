@@ -33,7 +33,10 @@ export class DataDrivenFormComponent implements OnInit, OnDestroy {
         "",
         [Validators.required, Validators.minLength(5), Validators.maxLength(20)]
       ],
-      fullname: [""],
+      fullname: [
+        "",
+        [Validators.required, Validators.minLength(5), Validators.maxLength(20)]
+      ],
       email: [
         "",
         Validators.pattern(
