@@ -5,12 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { StructuralComponent } from './component/structural/structural.component';
 import { AttributeComponent } from './component/attribute/attribute.component';
+import { ColorDirective } from './directives/color.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     StructuralComponent,
-    AttributeComponent
+    AttributeComponent,
+    ColorDirective
   ],
   imports: [
     BrowserModule,
