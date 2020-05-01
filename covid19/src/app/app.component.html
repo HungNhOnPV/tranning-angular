@@ -1,0 +1,64 @@
+<h1 [ngStyle]="{ 'text-align': 'center' }">
+  Chương trình thông báo về Coronavirus - Covid 19
+</h1>
+<br />
+<div style="width: 40%;">
+  <canvas
+      baseChart
+      [chartType]="'line'"
+      [datasets]="chartData"
+      [labels]="chartLabels"
+      [options]="chartOptions"
+      [legend]="true"
+      (chartClick)="onChartClick($event)">
+  </canvas>
+</div>
+<div>
+  <table id="data" style="border-collapse: collapse;">
+    <tr>
+      <th *ngFor="let data of globalData | keyvalue">
+        {{ data.key }}
+      </th>
+    </tr>
+    <tr>
+      <td *ngFor="let data of globalData | keyvalue">
+        {{ data.value }}
+      </td>
+    </tr>
+  </table>
+</div>
+<br />
+<div>
+  <table id="data" style="border-collapse: collapse;">
+    <tr>
+      <th *ngFor="let data of countriesData[0] | keyvalue">
+        <span class="material-icons" (click)="onOderBy(data.key, 'asc')">
+          arrow_downward
+        </span>
+        <span class="material-icons" (click)="onOderBy(data.key, 'desc')">
+          arrow_upward
+        </span>
+        {{ data.key }}
+      </th>
+    </tr>
+    <tr *ngFor="let row of countriesData">
+      <td
+        *ngFor="let data of row | keyvalue"
+        [style.text-align]="
+          (+data.value).toString() === data.value.toString() ? 'right' : 'left'
+        "
+      >
+        <span *ngIf="data.key === 'Date'">
+          {{ data.value | date: "shortDate" }}
+        </span>
+        <span *ngIf="data.key !== 'Date'">
+          {{
+            (+data.value).toString() === data.value.toString()
+              ? (data.value | number: "0.0")
+              : data.value
+          }}
+        </span>
+      </td>
+    </tr>
+  </table>
+</div>
