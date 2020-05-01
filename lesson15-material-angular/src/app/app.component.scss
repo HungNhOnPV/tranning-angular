@@ -1,0 +1,27 @@
+/* using Sass */
+@import "~bootstrap/scss/bootstrap";
+
+.nav-height {
+  min-height: 50px !important;
+  height: 50px !important;
+}
+
+.content-move-left {
+  margin-left: 10px !important;
+  transition: ease 0.1s;
+}
+
+.content-move-right {
+  margin-left: 170px !important;
+  transition: ease 0.2s;
+}
+
+.active-link {
+  background-color: orangered;
+  color: white;
+}
+
+.mat-button:hover {
+  background: blue;
+  color: white;
+}

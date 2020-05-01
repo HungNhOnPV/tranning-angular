@@ -1,0 +1,76 @@
+<div class="container">
+  <h2>Add new a student</h2>
+  <form [formGroup]="studentForm">
+    <label>Code</label>
+    <input
+      class="form-control"
+      placeholder=""
+      formControlName="code"
+      required
+    />
+
+    <label>Gender</label>
+    <input
+      class="form-control"
+      placeholder=""
+      formControlName="gender"
+      required
+    />
+
+    <label>First Name</label>
+    <input
+      class="form-control"
+      placeholder=""
+      formControlName="firstName"
+      required
+    />
+
+    <label>Last Name</label>
+    <input
+      class="form-control"
+      placeholder=""
+      formControlName="lastName"
+      required
+    />
+
+    <label>Dob</label>
+    <input class="form-control" placeholder="" formControlName="dob" required />
+
+    <label>Email</label>
+    <input
+      class="form-control"
+      placeholder=""
+      formControlName="email"
+      required
+    />
+
+    <label>Phone</label>
+    <input
+      class="form-control"
+      placeholder=""
+      formControlName="phone"
+      required
+    />
+      <button
+      *ngIf="id !== '0'; else add"
+      type="button"
+      class="btn btn-outline-warning mt-3"
+      [disabled]="!studentForm.valid"
+      (click)="handleEdit()"
+
+    >
+      Edit
+    </button>
+
+    <ng-template #add>
+      <button
+      type="button"
+      class="btn btn-outline-danger mt-3"
+      [disabled]="!studentForm.valid"
+      (click)="handleAdd()"
+    >
+      Add
+    </button>
+    </ng-template>
+  </form>
+</div>

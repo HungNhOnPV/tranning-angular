@@ -1,0 +1,59 @@
+<mat-toolbar color="primary" class="nav-height">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="openLeftSide()">menu</mat-icon>
+    </button>
+    <h1>Quản lý học sinh</h1>
+    <span class="menu-spacer" style="width: 100px;"></span>
+    <div>
+      <a mat-button [routerLink]="['/home']" [routerLinkActive]="'active-link'">
+        <mat-icon mat-list-icon>home</mat-icon> Home
+      </a>
+      <a
+        mat-button
+        [routerLink]="['/students']"
+        [routerLinkActive]="'active-link'"
+      >
+        <mat-icon>filter_none</mat-icon>
+        <span matBadge="{{totalStudent}}" matBadgeColor="warn">Students</span>
+      </a>
+      <a
+        mat-button
+        [routerLink]="['/about']"
+        [routerLinkActive]="'active-link'"
+      >
+        <mat-icon>person</mat-icon> About
+      </a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav (closed)="closeLeftSide()">
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['/home']">
+        <mat-icon mat-list-icon>home</mat-icon> Home
+      </a>
+      <a mat-list-item [routerLink]="['/students']">
+        <mat-icon>filter_none</mat-icon> Students
+      </a>
+      <a mat-list-item [routerLink]="['/about']">
+        <mat-icon>person</mat-icon> About
+      </a>
+      <a mat-list-item (click)="sidenav.toggle()" mat-list-item>
+        <mat-icon>close</mat-icon> Close
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div
+      style="height: 90vh; margin: 20px 0 10px 10px;"
+      [ngClass]="{
+        'content-move-left': !isOpened,
+        'content-move-right': isOpened
+      }"
+    >
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

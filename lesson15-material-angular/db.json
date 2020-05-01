@@ -1,0 +1,14 @@
+{
+  "students": [
+    {
+      "code": "SV-2020",
+      "gender": "famale",
+      "firstName": "Ngô Thị",
+      "lastName": "Hương",
+      "dob": "1998/5/29",
+      "email": "a@gmail.com",
+      "phone": "0123456789",
+      "id": 1
+    }
+  ]
+}
